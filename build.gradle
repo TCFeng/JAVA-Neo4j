@@ -7,19 +7,19 @@ def loadConfiguration() {
 
 loadConfiguration()
 
-/* ¤Ş¥Î java plugin Àò±o½sÄ¶ java ±M®×¬ÛÃöªº task $ */
+/* å¼•ç”¨ java plugin ç²å¾—ç·¨è­¯ java å°ˆæ¡ˆç›¸é—œçš„ task $ */
 apply plugin: 'eclipse'
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'com.bmuschko.tomcat'
 
-/* ¤Ş¥Î application plugin Àò±o°õ¦æ java ±M®×¬ÛÃöªº task $ */
+/* å¼•ç”¨ application plugin ç²å¾—åŸ·è¡Œ java å°ˆæ¡ˆç›¸é—œçš„ task $ */
 // apply plugin: 'application'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-/* ³]©w maven repository server $ */
+/* è¨­å®š maven repository server $ */
 repositories {
     mavenCentral()
 }
@@ -40,7 +40,7 @@ tomcat {
     contextPath = 'neo4j'
 }
 
-/* «Å§i±M®×ªº¬Û¨Ì¨ç¦¡®w $ */
+/* å®£å‘Šå°ˆæ¡ˆçš„ç›¸ä¾å‡½å¼åº« $ */
 dependencies {
 
     def tomcatVersion = '8.0.42'
@@ -53,17 +53,16 @@ dependencies {
     compile 'org.springframework:spring-webmvc:5.0.4.RELEASE'
     compile 'org.springframework.data:spring-data-neo4j:5.0.5.RELEASE'
 
-    //hibernate
-    compile 'org.hibernate:hibernate-core:5.2.10.Final'
-
-
+	compile 'javax.servlet:jstl:1.2'  
+	compile "org.slf4j:slf4j-simple:1.7.9"
     compile 'com.fasterxml.jackson.core:jackson-core:2.9.4'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
+    compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.3.1'
 
+	compile group: 'org.springframework.data', name: 'spring-data-rest-core', version: '3.0.5.RELEASE'
+	compile group: 'org.neo4j', name: 'neo4j', version: '3.3.3'
+	compile group: 'org.apache.poi', name: 'poi', version: '3.17'
     //include in compile only, exclude in the war
     providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
 }
-
-
-
-
